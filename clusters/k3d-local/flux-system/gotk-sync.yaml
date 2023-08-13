@@ -20,8 +20,18 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./clusters/k3d-local
+  path: ./flux/
   prune: true
   sourceRef:
     kind: GitRepository
     name: flux-system
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: flux-system
+  namespace: flux-system
+type: Opaque
+stringData:
+  username: satriashp
+  password: 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

@@ -18,13 +18,13 @@ image: rancher/k3s:v1.26.4-k3s1 # same as `--image rancher/k3s:v1.20.4-k3s1`
 #     nodeFilters:
 #       - server:0
 #       - agent:*
-ports:
-  - port: 80:80 # same as `--port '8080:80@loadbalancer'`
-    nodeFilters:
-      - loadbalancer
-  - port: 443:443
-    nodeFilters:
-      - loadbalancer
+# ports:
+#   - port: 80:80 # same as `--port '8080:80@loadbalancer'`
+#     nodeFilters:
+#       - loadbalancer
+#   - port: 443:443
+#     nodeFilters:
+#       - loadbalancer
 # env:
 #   - envVar: bar=baz # same as `--env 'bar=baz@server:0'`
 #     nodeFilters:
@@ -59,7 +59,7 @@ options:
   k3d: # k3d runtime settings
     wait: true # wait for cluster to be usable before returining; same as `--wait` (default: true)
     timeout: "60s" # wait timeout before aborting; same as `--timeout 60s`
-    disableLoadbalancer: false # same as `--no-lb`
+    disableLoadbalancer: true # same as `--no-lb`
     disableImageVolume: false # same as `--no-image-volume`
     disableRollback: false # same as `--no-Rollback`
     loadbalancer:
@@ -74,6 +74,9 @@ options:
         nodeFilters:
           - server:*
           - agent:*
+      - arg: "--disable=traefik"
+        nodeFilters:
+          - server:*
     nodeLabels:
       - label: foo=bar # same as `--k3s-node-label 'foo=bar@agent:1'` -> this results in a Kubernetes node label
         nodeFilters:
