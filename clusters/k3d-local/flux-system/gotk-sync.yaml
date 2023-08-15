@@ -20,18 +20,22 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./clusters/k3d-local
+  path: ./flux
   prune: true
   sourceRef:
     kind: GitRepository
     name: flux-system
-# ---
-# apiVersion: v1
-# kind: Secret
-# metadata:
-#   name: flux-system
-#   namespace: flux-system
-# type: Opaque
-# stringData:
-#   username: satriashp
-#   password: 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
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: flux-system
+  namespace: flux-system
+data:
+  identity: >-
+    LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JRzJBZ0VBTUJBR0J5cUdTTTQ5QWdFR0JTdUJCQUFpQklHZU1JR2JBZ0VCQkRCNSszQWxKRTRqS0Q4cHBUMGoKby9jNEx6OC96SUxFTUtiUUpRWDBNdEFZM1NiSWZvL01RaVlPK2NSUHIwUDcxdnFoWkFOaUFBUmV5dXJBYWppSwo1VDFVVk9KWDlVR3VGb2FZVlg4MVhKRElhZVZPU3BtU2E1MVVZOXYyRkIvaVN3UjNZU3h1Q2FuOXJaQnhWU3B6Cnp0R1NQeldrd0ZpeC9NbUJuZjZrSmhwaEhLck9TQ2oxY1daRS83MkpyYXVWL1FBVlBMcE16Lzg9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K
+  identity.pub: >-
+    ZWNkc2Etc2hhMi1uaXN0cDM4NCBBQUFBRTJWalpITmhMWE5vWVRJdGJtbHpkSEF6T0RRQUFBQUlibWx6ZEhBek9EUUFBQUJoQkY3SzZzQnFPSXJsUFZSVTRsZjFRYTRXaHBoVmZ6VmNrTWhwNVU1S21aSnJuVlJqMi9ZVUgrSkxCSGRoTEc0SnFmMnRrSEZWS25QTzBaSS9OYVRBV0xIOHlZR2QvcVFtR21FY3FzNUlLUFZ4WmtUL3ZZbXRxNVg5QUJVOHVrelAvdz09Cg==
+  known_hosts: >-
+    Z2l0aHViLmNvbSBlY2RzYS1zaGEyLW5pc3RwMjU2IEFBQUFFMlZqWkhOaExYTm9ZVEl0Ym1semRIQXlOVFlBQUFBSWJtbHpkSEF5TlRZQUFBQkJCRW1LU0VOalFFZXpPbXhrWk15N29wS2d3RkI5bmt0NVlScllNak51RzVOODd1UmdnNkNMcmJvNXdBZFQveTZ2MG1LVjBVMncwV1oyWUIvKytUcG9ja2c9
+type: Opaque
