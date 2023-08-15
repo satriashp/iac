@@ -1,11 +1,16 @@
+terraform {
+  required_providers {
+    helm = {
+      source  = "hashicorp/helm"
+      version = ">=2.9.0"
+    }
+  }
+}
+
 provider "helm" {
   kubernetes {
     config_context = "k3d-local"
     config_path    = "~/.kube/config"
-    # host                   = var.host
-    # client_certificate     = base64decode(var.client_certificate)
-    # client_key             = base64decode(var.client_key)
-    # cluster_ca_certificate = base64decode(var.cluster_ca_certificate)
   }
 }
 
