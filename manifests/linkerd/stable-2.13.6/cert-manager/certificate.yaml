@@ -29,7 +29,7 @@ metadata:
   name: linkerd-policy-validator
   namespace: flux-system
 spec:
-  secretName: linkerd-policy-validator-k8s-tls
+  secretName: linkerd-policy-validator
   duration: 24h
   renewBefore: 1h
   issuerRef:
@@ -51,7 +51,7 @@ metadata:
   name: linkerd-proxy-injector
   namespace: flux-system
 spec:
-  secretName: linkerd-proxy-injector-k8s-tls
+  secretName: linkerd-proxy-injector
   duration: 24h
   renewBefore: 1h
   issuerRef:
@@ -72,7 +72,7 @@ metadata:
   name: linkerd-sp-validator
   namespace: flux-system
 spec:
-  secretName: linkerd-sp-validator-k8s-tls
+  secretName: linkerd-sp-validator
   duration: 24h
   renewBefore: 1h
   issuerRef:
