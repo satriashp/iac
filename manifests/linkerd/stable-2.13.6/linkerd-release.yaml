@@ -20,10 +20,13 @@ spec:
   values:
     policyValidator:
       externalSecret: true
+      injectCaFrom: flux-system/linkerd-policy-validator
     proxyInjector:
       externalSecret: true
+      injectCaFrom: flux-system/linkerd-proxy-injector
     profileValidator:
       externalSecret: true
+      injectCaFrom: flux-system/linkerd-sp-validator
   valuesFrom:
     - kind: Secret
       name: linkerd-identity-issuer
@@ -39,18 +42,3 @@ spec:
       name: linkerd-identity-issuer
       valuesKey: tls.key
       targetPath: identity.issuer.tls.keyPEM
-
-    - kind: Secret
-      name: linkerd-policy-validator
-      valuesKey: ca.crt
-      targetPath: policyValidator.caBundle
-
-    - kind: Secret
-      name: linkerd-proxy-injector
-      valuesKey: ca.crt
-      targetPath: proxyInjector.caBundle
-
-    - kind: Secret
-      name: linkerd-sp-validator
-      valuesKey: ca.crt
-      targetPath: profileValidator.caBundle
