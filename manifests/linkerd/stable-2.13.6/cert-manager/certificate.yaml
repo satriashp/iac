@@ -27,9 +27,9 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: linkerd-policy-validator
-  namespace: flux-system
+  namespace: linkerd
 spec:
-  secretName: linkerd-policy-validator
+  secretName: linkerd-policy-validator-k8s-tls
   duration: 24h
   renewBefore: 1h
   issuerRef:
@@ -49,9 +49,9 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: linkerd-proxy-injector
-  namespace: flux-system
+  namespace: linkerd
 spec:
-  secretName: linkerd-proxy-injector
+  secretName: linkerd-proxy-injector-k8s-tls
   duration: 24h
   renewBefore: 1h
   issuerRef:
@@ -70,9 +70,9 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: linkerd-sp-validator
-  namespace: flux-system
+  namespace: linkerd
 spec:
-  secretName: linkerd-sp-validator
+  secretName: linkerd-sp-validator-k8s-tls
   duration: 24h
   renewBefore: 1h
   issuerRef:

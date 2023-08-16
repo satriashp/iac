@@ -20,13 +20,13 @@ spec:
   values:
     policyValidator:
       externalSecret: true
-      injectCaFrom: flux-system/linkerd-policy-validator
+      injectCaFrom: linkerd/linkerd-policy-validator
     proxyInjector:
       externalSecret: true
-      injectCaFrom: flux-system/linkerd-proxy-injector
+      injectCaFrom: linkerd/linkerd-proxy-injector
     profileValidator:
       externalSecret: true
-      injectCaFrom: flux-system/linkerd-sp-validator
+      injectCaFrom: linkerd/linkerd-sp-validator
   valuesFrom:
     - kind: Secret
       name: linkerd-identity-issuer
