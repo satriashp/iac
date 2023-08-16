@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
 - cluster-issuer.yaml
 - root-trust-anchor-sercret.yaml
+- webhook-issuer-tls-secret.yaml
