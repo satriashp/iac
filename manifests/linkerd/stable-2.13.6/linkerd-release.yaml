@@ -17,16 +17,40 @@ spec:
         namespace: flux-system
       interval: 1m
   targetNamespace: linkerd
+  values:
+    policyValidator:
+      externalSecret: true
+    proxyInjector:
+      externalSecret: true
+    profileValidator:
+      externalSecret: true
   valuesFrom:
     - kind: Secret
       name: linkerd-identity-issuer
       valuesKey: ca.crt
       targetPath: identityTrustAnchorsPEM
+
     - kind: Secret
       name: linkerd-identity-issuer
       valuesKey: tls.crt
       targetPath: identity.issuer.tls.crtPEM
+
     - kind: Secret
       name: linkerd-identity-issuer
       valuesKey: tls.key
       targetPath: identity.issuer.tls.keyPEM
+
+    - kind: Secret
+      name: linkerd-policy-validator
+      valuesKey: ca.crt
+      targetPath: policyValidator.caBundle
+
+    - kind: Secret
+      name: linkerd-proxy-injector
+      valuesKey: ca.crt
+      targetPath: proxyInjector.caBundle
+
+    - kind: Secret
+      name: linkerd-sp-validator
+      valuesKey: ca.crt
+      targetPath: profileValidator.caBundle
