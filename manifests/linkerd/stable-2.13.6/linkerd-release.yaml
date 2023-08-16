@@ -4,6 +4,8 @@ metadata:
   name: linkerd
   namespace: flux-system
 spec:
+  dependsOn:
+    - linkerd-crds
   interval: 1h
   chart:
     spec:
