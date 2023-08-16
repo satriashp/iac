@@ -8,8 +8,8 @@ spec:
   duration: 48h
   renewBefore: 25h
   issuerRef:
-    name: linkerd-trust-anchor
-    kind: Issuer
+    name: root-trust-anchor
+    kind: ClusterIssuer
   commonName: identity.linkerd.cluster.local
   dnsNames:
   - identity.linkerd.cluster.local
