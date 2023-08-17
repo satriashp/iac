@@ -22,3 +22,6 @@ spec:
   values:
     agent:
       enabled: false
+    podAnnotations:
+      config.linkerd.io/skip-inbound-ports: 80,33
+      linkerd.io/inject: ingress
