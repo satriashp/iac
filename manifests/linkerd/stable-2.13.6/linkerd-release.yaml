@@ -18,6 +18,8 @@ spec:
       interval: 1m
   targetNamespace: linkerd
   values:
+    podLabels:
+      satria.shp/cluster-name: k3d-local
     policyValidator:
       externalSecret: true
       injectCaFrom: linkerd/linkerd-policy-validator
