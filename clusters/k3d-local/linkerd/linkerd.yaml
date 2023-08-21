@@ -13,15 +13,10 @@ spec:
     kind: GitRepository
     name: flux-system
   patches:
-    - patch: |-
-        apiVersion: helm.toolkit.fluxcd.io/v2beta1
-        kind: HelmRelease
-        metadata:
-          name: linkerd
-          namespace: flux-system
-        spec:
-          values:
-            podLabels: {}
+    - patch: |
+        - op: replace
+          path: /spec/values/podLabels
+          value: {}
       target:
         kind: HelmRelease
         name: linkerd
