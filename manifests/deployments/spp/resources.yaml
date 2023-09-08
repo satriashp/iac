@@ -18,7 +18,6 @@ spec:
       command: ['wget']
       args: ['spp:80']
   restartPolicy: Never
-MANIFEST:
 ---
 # Source: spp/charts/mysql/templates/serviceaccount.yaml
 apiVersion: v1
