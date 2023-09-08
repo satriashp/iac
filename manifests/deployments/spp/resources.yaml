@@ -1,4 +1,10 @@
 ---
+# Source: spp/templates/namespace.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: prod
+---
 # Source: spp/charts/mysql/templates/serviceaccount.yaml
 apiVersion: v1
 kind: ServiceAccount
