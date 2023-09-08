@@ -1,23 +1,3 @@
-# Source: spp/templates/tests/test-connection.yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: "spp-test-connection"
-  labels:
-    helm.sh/chart: spp-0.1.0
-    app.kubernetes.io/name: spp
-    app.kubernetes.io/instance: spp
-    app.kubernetes.io/version: "0.1.0"
-    app.kubernetes.io/managed-by: Helm
-  annotations:
-    "helm.sh/hook": test
-spec:
-  containers:
-    - name: wget
-      image: busybox
-      command: ['wget']
-      args: ['spp:80']
-  restartPolicy: Never
 ---
 # Source: spp/charts/mysql/templates/serviceaccount.yaml
 apiVersion: v1
@@ -1117,6 +1097,7 @@ spec:
   hostBinding:
     namespace:
       from: SELF   # See below---
+---
 apiVersion: getambassador.io/v3alpha1
 kind: Host
 metadata:
@@ -1171,3 +1152,24 @@ spec:
   rewrite: ""
   service: spp:80
   hostname: "spp.lvh.me"
+---
+# Source: spp/templates/tests/test-connection.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "spp-test-connection"
+  labels:
+    helm.sh/chart: spp-0.1.0
+    app.kubernetes.io/name: spp
+    app.kubernetes.io/instance: spp
+    app.kubernetes.io/version: "0.1.0"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['spp:80']
+  restartPolicy: Never
