@@ -338,7 +338,7 @@ data:
     APP_KEY=base64:7H0cRwTwuUdkRhhQEHWtXEG8hpdYWUJ9Xy0dB7xkapM=
     APP_DEBUG=false
     APP_URL=https://spp.lvh.me
-    ASSET_URL=http://spp.lvh.me
+    ASSET_URL=https://spp.lvh.me
     APP_PORT=80
     APP_SERVICE=app
 
@@ -542,7 +542,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/configmap: 840bc4ff4b23f7368737052f0ec40751ae8a5136f998630176715c0977c41525
+        checksum/configmap: d2727551e648b04693a4c4cd30eb2e70350fe324ffee8f287bea000c8a0cf8a7
         linkerd.io/inject: enabled
       labels:
         app.kubernetes.io/name: spp
@@ -629,7 +629,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/configmap: 840bc4ff4b23f7368737052f0ec40751ae8a5136f998630176715c0977c41525
+        checksum/configmap: d2727551e648b04693a4c4cd30eb2e70350fe324ffee8f287bea000c8a0cf8a7
         linkerd.io/inject: enabled
       labels:
         app.kubernetes.io/name: spp-horizon
@@ -687,7 +687,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/configmap: 840bc4ff4b23f7368737052f0ec40751ae8a5136f998630176715c0977c41525
+        checksum/configmap: d2727551e648b04693a4c4cd30eb2e70350fe324ffee8f287bea000c8a0cf8a7
         linkerd.io/inject: enabled
       labels:
         app.kubernetes.io/name: spp-scheduler
@@ -1173,25 +1173,3 @@ spec:
   rewrite: ""
   service: spp:80
   hostname: "spp.lvh.me"
----
-# Source: spp/templates/tests/test-connection.yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: "spp-test-connection"
-  namespace: prod
-  labels:
-    helm.sh/chart: spp-0.1.0
-    app.kubernetes.io/name: spp
-    app.kubernetes.io/instance: spp
-    app.kubernetes.io/version: "0.1.0"
-    app.kubernetes.io/managed-by: Helm
-  annotations:
-    "helm.sh/hook": test
-spec:
-  containers:
-    - name: wget
-      image: busybox
-      command: ['wget']
-      args: ['spp:80']
-  restartPolicy: Never
