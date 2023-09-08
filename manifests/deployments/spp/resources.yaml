@@ -289,6 +289,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: spp
+  namespace: "prod"
   labels:
     helm.sh/chart: spp-0.1.0
     app.kubernetes.io/name: spp
