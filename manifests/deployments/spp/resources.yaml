@@ -1113,7 +1113,7 @@ spec:
     name: spp-spp.lvh.me
   requestPolicy:
     insecure:
-      action: Route
+      action: Redirect
       additionalPort: -1
 ---
 # Source: spp/templates/emissary.yaml
