@@ -1173,6 +1173,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: "spp-test-connection"
+  namespace: prod
   labels:
     helm.sh/chart: spp-0.1.0
     app.kubernetes.io/name: spp
