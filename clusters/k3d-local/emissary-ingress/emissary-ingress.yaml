@@ -13,7 +13,7 @@ spec:
     kind: GitRepository
     name: flux-system
   healthChecks:
-    - apiVersion: apps/v1
-      kind: Deployment
-      name: emissary-apiext
-      namespace: emissary-system
+    - apiVersion: helm.toolkit.fluxcd.io/v2beta1
+      kind: HelmRelease
+      name: emissary-ingress
+      namespace: flux-system
