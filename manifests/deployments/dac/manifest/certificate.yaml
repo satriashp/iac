@@ -1,0 +1,17 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: dac-webhook
+  namespace: "flux-system"
+spec:
+  secretName: dac-webhook
+  duration: 48h
+  renewBefore: 25h
+  issuerRef:
+    name: root-trust-anchor
+    kind: ClusterIssuer
+  commonName: "dac-webhook.flux-system"
+  dnsNames:
+    - "dac-webhook.flux-system"
+    - "dac-webhook.flux-system.svc"
+    - "dac-webhook.flux-system.svc.cluster.local"

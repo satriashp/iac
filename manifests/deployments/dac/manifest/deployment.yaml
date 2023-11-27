@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dac-webhook
+  namespace: flux-system
+  labels:
+    app: dac-webhook
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dac-webhook
+  template:
+    metadata:
+      labels:
+        app: dac-webhook
+    spec:
+      containers:
+        - name: server
+          # local setup for testing
+          image: registry.localhost:5000/dac:latest
+          imagePullPolicy: Always
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            seccompProfile:
+              type: "RuntimeDefault"
+            capabilities:
+              drop:
+                - "ALL"
+          env:
+            - name: ALLOWED
+              value: "false"
+            - name: ADDITIONAL_CRDS
+              value: "certificaterequests.cert-manager.io"
+          ports:
+            - containerPort: 443
+              name: webhook-api
+            - containerPort: 3000
+              name: http
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /health
+              port: http
+              scheme: HTTP
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /health
+              port: http
+              scheme: HTTP
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          volumeMounts:
+            - name: webhook-tls-certs
+              mountPath: /work/certs
+              readOnly: true
+      volumes:
+        - name: webhook-tls-certs
+          secret:
+            secretName: dac-webhook
