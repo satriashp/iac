@@ -1,6 +1,8 @@
-FROM ruby:3.2
+FROM ruby:3.2.2-slim
 
 WORKDIR /work
+
+RUN apt-get update && apt-get install make build-essential -y
 
 RUN gem install puma sinatra json
 
