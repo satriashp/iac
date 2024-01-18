@@ -7,3 +7,4 @@ bases:
   - ./emissary-ingress
   - ./linkerd
   - ./secrets
+  - ./kafka
