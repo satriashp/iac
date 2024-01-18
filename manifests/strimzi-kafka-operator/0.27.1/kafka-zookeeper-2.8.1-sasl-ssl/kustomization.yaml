@@ -4,3 +4,5 @@ resources:
   - ../base
   - ./kafka.yaml
   - ./kafka-user.yaml
+  - ./kafka-pdb.yaml
+  - ./zookeeper-pdb.yaml
