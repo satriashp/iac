@@ -30,7 +30,7 @@ spec:
       volumes:
       - id: 0
         type: persistent-claim
-        size: 10Gi
+        size: ${KAFKA_STORAGE_SIZE:=10Gi}
         deleteClaim: false
     authorization:
       type: simple
@@ -38,15 +38,22 @@ spec:
         - accelbyte
     resources:
       requests:
-        memory: 2Gi
+        memory: ${KAFKA_MEMORY_REQUESTS:=2Gi}
       limits:
-        memory: 2Gi
+        memory: ${KAFKA_MEMORY_LIMITS:=2Gi}
     template:
       podDisruptionBudget:
         maxUnavailable: 0
       pod:
         terminationGracePeriodSeconds: 120
         affinity:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+              - matchExpressions:
+                - key: topology.kubernetes.io/zone
+                  operator: In
+                  values: ${AVAILABILITY_ZONES}
           podAntiAffinity:
             requiredDuringSchedulingIgnoredDuringExecution:
               - labelSelector:
@@ -60,19 +67,26 @@ spec:
     replicas: 3
     storage:
       type: persistent-claim
-      size: 10Gi
+      size: ${ZOOKEEPER_STORAGE_SIZE:=10Gi}
       deleteClaim: false
     resources:
       requests:
-        memory: 2Gi
+        memory: ${ZOOKEEPER_MEMORY_REQUESTS:=2Gi}
       limits:
-        memory: 2Gi
+        memory: ${ZOOKEEPER_MEMORY_LIMITS:=2Gi}
     template:
       podDisruptionBudget:
         maxUnavailable: 0
       pod:
         terminationGracePeriodSeconds: 120
         affinity:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+              - matchExpressions:
+                - key: topology.kubernetes.io/zone
+                  operator: In
+                  values: ${AVAILABILITY_ZONES}
           podAntiAffinity:
             requiredDuringSchedulingIgnoredDuringExecution:
               - labelSelector:
