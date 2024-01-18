@@ -1,38 +1,11 @@
 apiVersion: kafka.strimzi.io/v1beta2
-kind: KafkaNodePool
-metadata:
-  name: kafka
-  namespace: kafka-operator
-  labels:
-    strimzi.io/cluster: kafka
-spec:
-  replicas: 3
-  roles:
-    - controller
-    - broker
-  storage:
-    type: jbod
-    volumes:
-      - id: 0
-        type: persistent-claim
-        size: 10Gi
-        deleteClaim: false
----
-
-apiVersion: kafka.strimzi.io/v1beta2
 kind: Kafka
 metadata:
   name: kafka
   namespace: kafka-operator
-  annotations:
-    strimzi.io/node-pools: enabled
-    strimzi.io/kraft: enabled
 spec:
   kafka:
-    version: 3.6.1
-    metadataVersion: 3.6-IV2
-    # The replicas field is required by the Kafka CRD schema while the KafkaNodePools feature gate is in alpha phase.
-    # But it will be ignored when Kafka Node Pools are used
+    version: 3.0.0
     replicas: 3
     listeners:
       - name: tls
@@ -47,12 +20,11 @@ spec:
       transaction.state.log.min.isr: 2
       default.replication.factor: 3
       min.insync.replicas: 2
+      inter.broker.protocol.version: "3.0"
       auto.create.topics.enable: true
       delete.topic.enable: true
       log.retention.ms: 86400000
       num.partitions: 5
-    # The storage field is required by the Kafka CRD schema while the KafkaNodePools feature gate is in alpha phase.
-    # But it will be ignored when Kafka Node Pools are used
     storage:
       type: jbod
       volumes:
@@ -84,19 +56,37 @@ spec:
                       values:
                         - kafka-kafka
                 topologyKey: "kubernetes.io/hostname"
-  # The ZooKeeper section is required by the Kafka CRD schema while the UseKRaft feature gate is in alpha phase.
-  # But it will be ignored when running in KRaft mode
   zookeeper:
     replicas: 3
     storage:
       type: persistent-claim
-      size: 100Gi
+      size: 10Gi
       deleteClaim: false
+    resources:
+      requests:
+        memory: 2Gi
+      limits:
+        memory: 2Gi
+    template:
+      podDisruptionBudget:
+        maxUnavailable: 0
+      pod:
+        terminationGracePeriodSeconds: 120
+        affinity:
+          podAntiAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              - labelSelector:
+                  matchExpressions:
+                    - key: strimzi.io/name
+                      operator: In
+                      values:
+                        - kafka-zookeeper
+                topologyKey: "kubernetes.io/hostname"
   entityOperator:
     userOperator: {}
   clusterCa:
     renewalDays: 30
-    validityDays: 3652 # 10years
+    validityDays: 3652 # 10 years
     generateCertificateAuthority: true
   clientsCa:
     renewalDays: 30
