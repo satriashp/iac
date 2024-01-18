@@ -7,7 +7,8 @@ spec:
   dependsOn:
     - name: cert-manager
   interval: 10m0s
-  path: ./manifests/strimzi-kafka-operator/0.27.1
+  # path: ./manifests/strimzi-kafka-operator/0.27.1
+  path: ./manifests/strimzi-kafka-operator/0.39.0/kafka-zookeper-3.6.1-sasl-ssl
   prune: true
   sourceRef:
     kind: GitRepository
