@@ -1,0 +1,51 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: replicator
+  namespace: kube-system
+spec:
+  interval: 5m
+  install:
+    remediation:
+      retries: -1
+  upgrade:
+    remediation:
+      retries: -1
+  chart:
+    spec:
+      chart: kubernetes-replicator
+      version: "2.9.2"
+      sourceRef:
+        kind: HelmRepository
+        name: replicator
+        namespace: kube-system
+      interval: 5m
+  values:
+    args:
+      - -resync-period=1m
+    podSecurityContext:
+      fsGroup: 2000
+    securityContext:
+      capabilities:
+        drop:
+          - ALL
+      readOnlyRootFilesystem: true
+      runAsNonRoot: true
+      runAsUser: 1000
+    resources:
+      limits:
+        cpu: 100m
+        memory: 128Mi
+      requests:
+        cpu: 100m
+        memory: 128Mi
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: replicator
+  namespace: kube-system
+spec:
+  url: https://helm.mittwald.de
+  interval: 1h

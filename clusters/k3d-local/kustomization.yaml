@@ -4,6 +4,7 @@ kind: Kustomization
 
 bases:
   - ./cert-manager
+  - ./replicator
   - ./emissary-ingress
   - ./linkerd
   - ./secrets

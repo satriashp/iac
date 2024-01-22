@@ -1,0 +1,22 @@
+---
+# Depends on all iac components.
+# All services deloyments should depend on this kustomization.
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: replicator
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: flux
+  interval: 10m0s
+  path: ./manifests/platform/replicator/v2.9.2/karpenter-on-init
+  prune: false
+  sourceRef:
+    kind: GitRepository
+    name: iac-repo
+  validation: client
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: cluster-variables
