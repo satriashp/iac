@@ -4,11 +4,11 @@ metadata:
   name: strimzi-drain-cleaner
   labels:
     app: strimzi-drain-cleaner
-  namespace: strimzi-drain-cleaner
+  namespace: kafka-operator
 subjects:
   - kind: ServiceAccount
     name: strimzi-drain-cleaner
-    namespace: strimzi-drain-cleaner
+    namespace: kafka-operator
 roleRef:
   kind: Role
   name: strimzi-drain-cleaner
