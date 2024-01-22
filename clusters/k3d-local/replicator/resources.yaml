@@ -10,13 +10,9 @@ spec:
   dependsOn:
     - name: flux-system
   interval: 10m0s
-  path: ./manifests/platform/replicator
+  path: ./manifests/replicator
   prune: false
   sourceRef:
     kind: GitRepository
     name: flux-system
   validation: client
-  postBuild:
-    substituteFrom:
-      - kind: ConfigMap
-        name: cluster-variables
