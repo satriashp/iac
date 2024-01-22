@@ -8,7 +8,7 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - name: flux
+    - name: flux-system
   interval: 10m0s
   path: ./manifests/platform/replicator/v2.9.2/karpenter-on-init
   prune: false
