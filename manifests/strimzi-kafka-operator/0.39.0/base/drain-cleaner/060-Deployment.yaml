@@ -4,7 +4,7 @@ metadata:
   name: strimzi-drain-cleaner
   labels:
     app: strimzi-drain-cleaner
-  namespace: kafka-operator
+  namespace: strimzi-drain-cleaner
 spec:
   replicas: 1
   selector:

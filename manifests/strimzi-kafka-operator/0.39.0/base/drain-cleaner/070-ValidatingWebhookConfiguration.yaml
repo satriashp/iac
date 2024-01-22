@@ -16,7 +16,7 @@ webhooks:
         scope: "Namespaced"
     clientConfig:
       service:
-        namespace: "kafka-operator"
+        namespace: "strimzi-drain-cleaner"
         name: "strimzi-drain-cleaner"
         path: /drainer
         port: 443

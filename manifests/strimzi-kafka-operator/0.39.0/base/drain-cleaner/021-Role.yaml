@@ -4,7 +4,7 @@ metadata:
   name: strimzi-drain-cleaner
   labels:
     app: strimzi-drain-cleaner
-  namespace: kafka-operator
+  namespace: strimzi-drain-cleaner
 rules:
   # When certificate reloading is enabled, Drain Cleaner will delete itself to reload the certificates. Therefore it
   # needs the right to delete the pods in its own namespace.
