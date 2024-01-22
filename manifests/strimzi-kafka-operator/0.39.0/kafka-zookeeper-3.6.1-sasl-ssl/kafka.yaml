@@ -63,6 +63,10 @@ spec:
                       values:
                         - kafka-kafka
                 topologyKey: "kubernetes.io/hostname"
+      clusterCaCert:
+        metadata:
+          annotations:
+            replicator.v1.mittwald.de/replicate-to: ${CA_CERT_REPLICATE_TO_NAMESPACES:="justice"}
   zookeeper:
     replicas: 3
     storage:

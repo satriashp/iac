@@ -15,3 +15,4 @@ spec:
   postBuild:
     substitute:
       AVAILABILITY_ZONES: '[ "us-east-2a" ]'
+      CA_CERT_REPLICATE_TO_NAMESPACES: "default,kube-system"
