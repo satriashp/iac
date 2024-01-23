@@ -16,3 +16,32 @@ spec:
     substitute:
       KAFKA_AVAILABILITY_ZONES: '[ "us-east-2a" ]'
       SECRET_REPLICATE_TO_NAMESPACES: "default,kube-system"
+  patches:
+    - patch: |
+        - op: replace
+          path: /spec/replicas
+          value: 2
+      target:
+        kind: KafkaNodePool
+        name: kafka
+        namespace: kafka-operator
+    - patch: |
+        - op: replace
+          path: /spec/kafka/config/offsets.topic.replication.factor
+          value: 2
+        - op: replace
+          path: /spec/kafka/config/transaction.state.log.replication.factor
+          value: 2
+        - op: replace
+          path: /spec/kafka/config/transaction.state.log.min.isr
+          value: 1
+        - op: replace
+          path: /spec/kafka/config/default.replication.factor
+          value: 2
+        - op: replace
+          path: /spec/kafka/config/min.insync.replicas
+          value: 1
+      target:
+        kind: Kafka
+        name: kafka
+        namespace: kafka-operator
