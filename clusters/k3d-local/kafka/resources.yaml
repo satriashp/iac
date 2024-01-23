@@ -20,7 +20,7 @@ spec:
     - patch: |
         - op: replace
           path: /spec/replicas
-          value: 2
+          value: 3
       target:
         kind: KafkaNodePool
         name: kafka

@@ -15,7 +15,7 @@ spec:
     volumes:
       - id: 0
         type: persistent-claim
-        size: ${ZOOKEEPER_STORAGE_SIZE:=10Gi}
+        size: ${KAFKA_STORAGE_SIZE:=10Gi}
         deleteClaim: false
 ---
 
@@ -58,7 +58,7 @@ spec:
       volumes:
       - id: 0
         type: persistent-claim
-        size: ${ZOOKEEPER_STORAGE_SIZE:=10Gi}
+        size: ${KAFKA_STORAGE_SIZE:=10Gi}
         deleteClaim: false
     authorization:
       type: simple
