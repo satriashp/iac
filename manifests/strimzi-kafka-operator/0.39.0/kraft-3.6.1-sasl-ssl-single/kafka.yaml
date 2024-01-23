@@ -1,0 +1,115 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaNodePool
+metadata:
+  name: kafka
+  namespace: kafka-operator
+  labels:
+    strimzi.io/cluster: kafka
+spec:
+  replicas: 1
+  roles:
+    - controller
+    - broker
+  storage:
+    type: jbod
+    volumes:
+      - id: 0
+        type: persistent-claim
+        size: ${ZOOKEEPER_STORAGE_SIZE:=10Gi}
+        deleteClaim: false
+---
+
+apiVersion: kafka.strimzi.io/v1beta2
+kind: Kafka
+metadata:
+  name: kafka
+  namespace: kafka-operator
+  annotations:
+    strimzi.io/node-pools: enabled
+    strimzi.io/kraft: enabled
+spec:
+  kafka:
+    version: 3.6.1
+    metadataVersion: 3.6-IV2
+    # The replicas field is required by the Kafka CRD schema while the KafkaNodePools feature gate is in alpha phase.
+    # But it will be ignored when Kafka Node Pools are used
+    replicas: 1
+    listeners:
+      - name: tls
+        port: 9092
+        type: internal
+        tls: true
+        authentication:
+          type: scram-sha-512
+    config:
+      # offsets.topic.replication.factor: 3
+      # transaction.state.log.replication.factor: 3
+      # transaction.state.log.min.isr: 2
+      # default.replication.factor: 3
+      # min.insync.replicas: 2
+      auto.create.topics.enable: true
+      delete.topic.enable: true
+      log.retention.ms: 86400000
+      num.partitions: 5
+    # The storage field is required by the Kafka CRD schema while the KafkaNodePools feature gate is in alpha phase.
+    # But it will be ignored when Kafka Node Pools are used
+    storage:
+      type: jbod
+      volumes:
+      - id: 0
+        type: persistent-claim
+        size: ${ZOOKEEPER_STORAGE_SIZE:=10Gi}
+        deleteClaim: false
+    authorization:
+      type: simple
+      superUsers:
+        - accelbyte
+    resources:
+      requests:
+        memory: ${KAFKA_MEMORY_REQUESTS:=2Gi}
+      limits:
+        memory: ${KAFKA_MEMORY_LIMITS:=2Gi}
+    template:
+      podDisruptionBudget:
+        maxUnavailable: 0
+      pod:
+        terminationGracePeriodSeconds: 120
+        affinity:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+              - matchExpressions:
+                - key: topology.kubernetes.io/zone
+                  operator: In
+                  values: ${AVAILABILITY_ZONES}
+          podAntiAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              - labelSelector:
+                  matchExpressions:
+                    - key: strimzi.io/name
+                      operator: In
+                      values:
+                        - kafka-kafka
+                topologyKey: "kubernetes.io/hostname"
+      clusterCaCert:
+        metadata:
+          annotations:
+            replicator.v1.mittwald.de/replicate-to: ${CA_CERT_REPLICATE_TO_NAMESPACES:="justice"}
+  # The ZooKeeper section is required by the Kafka CRD schema while the UseKRaft feature gate is in alpha phase.
+  # But it will be ignored when running in KRaft mode
+  zookeeper:
+    replicas: 3
+    storage:
+      type: persistent-claim
+      size: 100Gi
+      deleteClaim: false
+  entityOperator:
+    userOperator: {}
+  clusterCa:
+    renewalDays: 30
+    validityDays: 3652 # 10years
+    generateCertificateAuthority: true
+  clientsCa:
+    renewalDays: 30
+    validityDays: 3652 # 10years
+    generateCertificateAuthority: true

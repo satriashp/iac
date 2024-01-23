@@ -7,7 +7,7 @@ spec:
   dependsOn:
     - name: cert-manager
   interval: 10m0s
-  path: ./manifests/strimzi-kafka-operator/0.39.0
+  path: ./manifests/strimzi-kafka-operator/0.39.0/kraft-3.6.1-sasl-ssl-single
   prune: true
   sourceRef:
     kind: GitRepository

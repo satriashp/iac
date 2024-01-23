@@ -37,7 +37,7 @@ registries: # define how registries should be created or used
     host: "0.0.0.0"
     hostPort: "5000"
     volumes:
-      - /home/shp/Learn/registry:/var/lib/registry # persist registry data locally
+      - /home/shp/lib/registry:/var/lib/registry # persist registry data locally
   # use:
   #   - registry.localhost:5000 # some other k3d-managed registry; same as `--registry-use 'k3d-myotherregistry:5000'`
   config:
@@ -95,7 +95,7 @@ options:
       - label: topology.kubernetes.io/zone=us-east-2a # same as `--k3s-node-label 'foo=bar@agent:1'` -> this results in a Kubernetes node label
         nodeFilters:
           - agent:4
-      - label: topology.kubernetes.io/zone=us-east-2b # same as `--k3s-node-label 'foo=bar@agent:1'` -> this results in a Kubernetes node label
+      - label: topology.kubernetes.io/zone=us-east-2a # same as `--k3s-node-label 'foo=bar@agent:1'` -> this results in a Kubernetes node label
         nodeFilters:
           - agent:5
   kubeconfig:
