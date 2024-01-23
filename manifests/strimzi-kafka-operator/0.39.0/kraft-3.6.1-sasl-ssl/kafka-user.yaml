@@ -8,3 +8,8 @@ metadata:
 spec:
   authentication:
     type: scram-sha-512
+  template:
+    secret:
+      metadata:
+        annotations:
+          replicator.v1.mittwald.de/replicate-to: ${SECRET_REPLICATE_TO_NAMESPACES:="justice"}

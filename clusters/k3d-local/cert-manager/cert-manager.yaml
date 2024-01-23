@@ -4,6 +4,8 @@ metadata:
   name: cert-manager
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: replicator
   interval: 10m0s
   path: ./manifests/cert-manager
   prune: true

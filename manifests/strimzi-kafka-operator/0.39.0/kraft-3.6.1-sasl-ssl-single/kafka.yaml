@@ -42,11 +42,6 @@ spec:
         authentication:
           type: scram-sha-512
     config:
-      # offsets.topic.replication.factor: 3
-      # transaction.state.log.replication.factor: 3
-      # transaction.state.log.min.isr: 2
-      # default.replication.factor: 3
-      # min.insync.replicas: 2
       auto.create.topics.enable: true
       delete.topic.enable: true
       log.retention.ms: 86400000
@@ -81,7 +76,7 @@ spec:
               - matchExpressions:
                 - key: topology.kubernetes.io/zone
                   operator: In
-                  values: ${AVAILABILITY_ZONES}
+                  values: ${KAFKA_AVAILABILITY_ZONES}
           podAntiAffinity:
             requiredDuringSchedulingIgnoredDuringExecution:
               - labelSelector:
@@ -94,7 +89,7 @@ spec:
       clusterCaCert:
         metadata:
           annotations:
-            replicator.v1.mittwald.de/replicate-to: ${CA_CERT_REPLICATE_TO_NAMESPACES:="justice"}
+            replicator.v1.mittwald.de/replicate-to: ${SECRET_REPLICATE_TO_NAMESPACES:="justice"}
   # The ZooKeeper section is required by the Kafka CRD schema while the UseKRaft feature gate is in alpha phase.
   # But it will be ignored when running in KRaft mode
   zookeeper:

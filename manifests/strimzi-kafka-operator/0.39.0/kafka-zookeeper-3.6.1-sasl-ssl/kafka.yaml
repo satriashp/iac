@@ -53,7 +53,7 @@ spec:
               - matchExpressions:
                 - key: topology.kubernetes.io/zone
                   operator: In
-                  values: ${AVAILABILITY_ZONES}
+                  values: ${KAFKA_AVAILABILITY_ZONES}
           podAntiAffinity:
             requiredDuringSchedulingIgnoredDuringExecution:
               - labelSelector:
@@ -66,7 +66,7 @@ spec:
       clusterCaCert:
         metadata:
           annotations:
-            replicator.v1.mittwald.de/replicate-to: ${CA_CERT_REPLICATE_TO_NAMESPACES:="justice"}
+            replicator.v1.mittwald.de/replicate-to: ${SECRET_REPLICATE_TO_NAMESPACES:="justice"}
   zookeeper:
     replicas: 3
     storage:

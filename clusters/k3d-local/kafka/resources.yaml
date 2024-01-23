@@ -14,5 +14,5 @@ spec:
     name: flux-system
   postBuild:
     substitute:
-      AVAILABILITY_ZONES: '[ "us-east-2a" ]'
-      CA_CERT_REPLICATE_TO_NAMESPACES: "default,kube-system"
+      KAFKA_AVAILABILITY_ZONES: '[ "us-east-2a" ]'
+      SECRET_REPLICATE_TO_NAMESPACES: "default,kube-system"
