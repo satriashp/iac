@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - name: replicator
+    - name: emissary-ingress
   interval: 1m0s
   path: ./manifests/monitoring
   prune: true
