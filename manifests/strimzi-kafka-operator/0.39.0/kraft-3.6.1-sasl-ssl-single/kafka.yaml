@@ -119,13 +119,6 @@ spec:
     renewalDays: 30
     validityDays: 3652 # 10years
     generateCertificateAuthority: true
-  cruiseControl:
-    metricsConfig:
-      type: jmxPrometheusExporter
-      valueFrom:
-        configMapKeyRef:
-          name: kafka-metrics
-          key: metrics-config.yml
   kafkaExporter:
     topicRegex: ".*"
     groupRegex: ".*"
