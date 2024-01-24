@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ./000-namespace.yaml
+- ./010-prometheus-operator-deployment.yaml
+- ./020-strimzi-pod-monitor.yaml
+- ./030-prometheus-rules.yaml
+- ./040-prometheus-additional.yaml
+- ./050-prometheus.yaml
+- ./060-grafana.yaml

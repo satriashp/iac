@@ -1,0 +1,139 @@
+# This is not a recommended configuration, and further support should be available
+# from the Prometheus and Grafana communities.
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana
+  namespace: monitoring
+  labels:
+    app: strimzi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: grafana
+  template:
+    metadata:
+      labels:
+        name: grafana
+    spec:
+      containers:
+      - name: grafana
+        image: grafana/grafana:7.3.7
+        ports:
+        - name: grafana
+          containerPort: 3000
+          protocol: TCP
+        volumeMounts:
+        - name: grafana-data
+          mountPath: /var/lib/grafana
+        - name: grafana-logs
+          mountPath: /var/log/grafana
+        readinessProbe:
+          httpGet:
+            path: /api/health
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /api/health
+            port: 3000
+          initialDelaySeconds: 15
+          periodSeconds: 20
+      volumes:
+      - name: grafana-data
+        emptyDir: {}
+      - name: grafana-logs
+        emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana
+  namespace: monitoring
+  labels:
+    app: strimzi
+spec:
+  ports:
+  - name: grafana
+    port: 3000
+    targetPort: 3000
+    protocol: TCP
+  selector:
+    name: grafana
+  type: ClusterIP
+---
+# Source: spp/templates/emissary.yaml
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: grafana.lvh.me
+  namespace: monitoring
+spec:
+  secretName: grafana.lvh.me
+  duration: 48h
+  renewBefore: 25h
+  issuerRef:
+    name: root-trust-anchor
+    kind: ClusterIssuer
+  commonName: "grafana.lvh.me"
+  dnsNames:
+  - "grafana.lvh.me"
+---
+# Source: spp/templates/emissary.yaml
+---
+apiVersion: getambassador.io/v3alpha1
+kind: Host
+metadata:
+  name: grafana.lvh.me
+  namespace: monitoring
+spec:
+  hostname: "grafana.lvh.me"
+  tlsSecret:
+    name: grafana.lvh.me
+  requestPolicy:
+    insecure:
+      action: Redirect
+      additionalPort: -1
+---
+# Source: spp/templates/emissary.yaml
+apiVersion: getambassador.io/v3alpha1
+kind: Listener
+metadata:
+  name: spp-http
+  namespace: monitoring
+spec:
+  port: 8080
+  protocol: HTTPS  # NOT A TYPO, see below
+  securityModel: XFP
+  hostBinding:
+    namespace:
+      from: SELF   # See below
+---
+# Source: spp/templates/emissary.yaml
+apiVersion: getambassador.io/v3alpha1
+kind: Listener
+metadata:
+  name: spp-https
+  namespace: monitoring
+spec:
+  port: 8443
+  protocol: HTTPS
+  securityModel: XFP
+  hostBinding:
+    namespace:
+      from: SELF   # See below
+---
+# Source: spp/templates/emissary.yaml
+apiVersion: getambassador.io/v3alpha1
+kind:  Mapping
+metadata:
+  name: grafana.lvh.me
+  namespace: monitoring
+spec:
+  prefix: /
+  rewrite: ""
+  service: grafana:3000
+  hostname: "grafana.lvh.me"

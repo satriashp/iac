@@ -95,6 +95,12 @@ spec:
         metadata:
           annotations:
             replicator.v1.mittwald.de/replicate-to: ${SECRET_REPLICATE_TO_NAMESPACES:="justice"}
+    metricsConfig:
+      type: jmxPrometheusExporter
+      valueFrom:
+        configMapKeyRef:
+          name: kafka-metrics
+          key: kafka-metrics-config.yml
   # The ZooKeeper section is required by the Kafka CRD schema while the UseKRaft feature gate is in alpha phase.
   # But it will be ignored when running in KRaft mode
   zookeeper:
@@ -113,3 +119,13 @@ spec:
     renewalDays: 30
     validityDays: 3652 # 10years
     generateCertificateAuthority: true
+  cruiseControl:
+    metricsConfig:
+      type: jmxPrometheusExporter
+      valueFrom:
+        configMapKeyRef:
+          name: kafka-metrics
+          key: metrics-config.yml
+  kafkaExporter:
+    topicRegex: ".*"
+    groupRegex: ".*"
