@@ -7,7 +7,7 @@ spec:
   dependsOn:
     - name: replicator
   interval: 1m0s
-  path: ./iac/manifests/monitoring
+  path: ./manifests/monitoring
   prune: true
   sourceRef:
     kind: GitRepository
