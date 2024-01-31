@@ -38,6 +38,12 @@ bin/kafka-topics.sh \
  --command-config /tmp/client-scram.properties
 
 bin/kafka-topics.sh \
+ --topic experiment-2 \
+ --create \
+ --bootstrap-server kafka-kafka-bootstrap.kafka-operator:9092 \
+ --command-config /tmp/client-scram.properties
+
+bin/kafka-topics.sh \
  --topic experiment \
  --bootstrap-server kafka-kafka-bootstrap.kafka-operator:9092 \
  --command-config /tmp/client-scram.properties \
@@ -46,6 +52,11 @@ bin/kafka-topics.sh \
 bin/kafka-console-producer.sh \
  --bootstrap-server kafka-kafka-bootstrap.kafka-operator:9092 \
  --topic experiment \
+ --producer.config /tmp/client-scram.properties
+
+bin/kafka-console-producer.sh \
+ --bootstrap-server kafka-kafka-bootstrap.kafka-operator:9092 \
+ --topic experiment-2 \
  --producer.config /tmp/client-scram.properties
 
 bin/kafka-console-consumer.sh \
@@ -58,3 +69,29 @@ bin/kafka-console-consumer.sh \
 kubectl annotate pod -n kafka-operator kafka-kafka-0 strimzi.io/manual-rolling-update=true
 kubectl annotate pod -n kafka-operator kafka-kafka-1 strimzi.io/manual-rolling-update=true
 kubectl annotate pod -n kafka-operator kafka-kafka-2 strimzi.io/manual-rolling-update=true
+
+docker pull quay.io/strimzi/kafka:0.39.0-kafka-3.5.0
+docker pull quay.io/strimzi/kafka:0.39.0-kafka-3.5.1
+docker pull quay.io/strimzi/kafka:0.39.0-kafka-3.5.2
+docker pull quay.io/strimzi/kafka:0.39.0-kafka-3.6.0
+docker pull quay.io/strimzi/kafka:0.39.0-kafka-3.6.1
+docker pull quay.io/strimzi/operator:0.39.0
+docker pull quay.io/strimzi/kafka-bridge:0.27.0
+docker pull quay.io/strimzi/drain-cleaner:1.0.1
+
+docker tag quay.io/strimzi/kafka:0.39.0-kafka-3.5.0 localhost:5000/kafka:0.39.0-kafka-3.5.0
+docker push localhost:5000/kafka:0.39.0-kafka-3.5.0
+docker tag quay.io/strimzi/kafka:0.39.0-kafka-3.5.1 localhost:5000/kafka:0.39.0-kafka-3.5.1
+docker push localhost:5000/kafka:0.39.0-kafka-3.5.1
+docker tag quay.io/strimzi/kafka:0.39.0-kafka-3.5.2 localhost:5000/kafka:0.39.0-kafka-3.5.2
+docker push localhost:5000/kafka:0.39.0-kafka-3.5.2
+docker tag quay.io/strimzi/kafka:0.39.0-kafka-3.6.0 localhost:5000/kafka:0.39.0-kafka-3.6.0
+docker push localhost:5000/kafka:0.39.0-kafka-3.6.0
+docker tag quay.io/strimzi/kafka:0.39.0-kafka-3.6.1 localhost:5000/kafka:0.39.0-kafka-3.6.1
+docker push localhost:5000/kafka:0.39.0-kafka-3.6.1
+docker tag quay.io/strimzi/operator:0.39.0 localhost:5000/operator:0.39.0
+docker push localhost:5000/operator:0.39.0
+docker tag quay.io/strimzi/kafka-bridge:0.27.0 localhost:5000/kafka-bridge:0.27.0
+docker push localhost:5000/kafka-bridge:0.27.0
+docker tag quay.io/strimzi/drain-cleaner:1.0.1 localhost:5000/drain-cleaner:1.0.1
+docker push localhost:5000/drain-cleaner:1.0.1

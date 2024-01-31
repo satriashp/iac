@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "partitions": [
+    {
+      "topic": "experiment",
+      "partition": 0,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "experiment",
+      "partition": 1,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "experiment",
+      "partition": 2,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "experiment",
+      "partition": 3,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "experiment",
+      "partition": 4,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "experiment-2",
+      "partition": 0,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "experiment-2",
+      "partition": 1,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "experiment-2",
+      "partition": 2,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "experiment-2",
+      "partition": 3,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "experiment-2",
+      "partition": 4,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    }
+  ]
+}
