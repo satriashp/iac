@@ -1,0 +1,148 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: grafana
+  name: grafana
+  namespace: monitoring
+spec:
+  selector:
+    matchLabels:
+      app: grafana
+  template:
+    metadata:
+      labels:
+        app: grafana
+    spec:
+      securityContext:
+        fsGroup: 472
+        supplementalGroups:
+          - 0
+      containers:
+        - name: grafana
+          image: registry.localhost:5000/grafana:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+              name: http-grafana
+              protocol: TCP
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /robots.txt
+              port: 3000
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 30
+            successThreshold: 1
+            timeoutSeconds: 2
+          livenessProbe:
+            failureThreshold: 3
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            successThreshold: 1
+            tcpSocket:
+              port: 3000
+            timeoutSeconds: 1
+          resources:
+            requests:
+              cpu: 250m
+              memory: 750Mi
+          volumeMounts:
+            - mountPath: /etc/grafana/provisioning/datasources/datasource.yaml
+              subPath: datasource.yaml
+              name: grafana-provisioning
+            - mountPath: /etc/grafana/provisioning/dashboards/dashboard.yaml
+              subPath: dashboard.yaml
+              name: grafana-provisioning
+            - mountPath: /etc/grafana/dashboards
+              name: grafana-dashboards
+      volumes:
+        - name: grafana-provisioning
+          configMap:
+            name: grafana-provisioning
+        - name: grafana-dashboards
+          configMap:
+            name: grafana-dashboards
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana
+  namespace: monitoring
+spec:
+  ports:
+    - port: 3000
+      protocol: TCP
+      targetPort: http-grafana
+  selector:
+    app: grafana
+  type: ClusterIP
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: grafana.lvh.me
+  namespace: monitoring
+spec:
+  secretName: grafana.lvh.me
+  duration: 48h
+  renewBefore: 25h
+  issuerRef:
+    name: root-trust-anchor
+    kind: ClusterIssuer
+  commonName: "grafana.lvh.me"
+  dnsNames:
+  - "grafana.lvh.me"
+---
+apiVersion: getambassador.io/v3alpha1
+kind: Host
+metadata:
+  name: grafana.lvh.me
+  namespace: monitoring
+spec:
+  hostname: "grafana.lvh.me"
+  tlsSecret:
+    name: grafana.lvh.me
+  requestPolicy:
+    insecure:
+      action: Redirect
+      additionalPort: -1
+---
+apiVersion: getambassador.io/v3alpha1
+kind: Listener
+metadata:
+  name: spp-http
+  namespace: monitoring
+spec:
+  port: 8080
+  protocol: HTTPS  # NOT A TYPO, see below
+  securityModel: XFP
+  hostBinding:
+    namespace:
+      from: SELF   # See below
+---
+apiVersion: getambassador.io/v3alpha1
+kind: Listener
+metadata:
+  name: spp-https
+  namespace: monitoring
+spec:
+  port: 8443
+  protocol: HTTPS
+  securityModel: XFP
+  hostBinding:
+    namespace:
+      from: SELF   # See below
+---
+apiVersion: getambassador.io/v3alpha1
+kind:  Mapping
+metadata:
+  name: grafana.lvh.me
+  namespace: monitoring
+spec:
+  prefix: /
+  rewrite: ""
+  service: grafana:3000
+  hostname: "grafana.lvh.me"

@@ -7,4 +7,6 @@ resources:
 - ./030-prometheus-rules.yaml
 - ./040-prometheus-additional.yaml
 - ./050-prometheus.yaml
-- ./060-grafana.yaml
+- ./060-grafana-configmap.yaml
+- ./060-grafana-dashboards.yaml
+- ./070-grafana.yaml
