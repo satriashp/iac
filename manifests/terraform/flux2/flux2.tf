@@ -20,4 +20,8 @@ resource "helm_release" "this" {
   name             = "flux2"
   namespace        = "flux-system"
   create_namespace = "true"
+
+  values = [
+    file("${path.module}/values.yaml")
+  ]
 }
