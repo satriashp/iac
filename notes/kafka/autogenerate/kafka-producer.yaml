@@ -21,6 +21,9 @@ spec:
     - mountPath: /tmp/ca.p12
       subPath: ca.p12
       name: cluster-tls
+    - mountPath: /tmp/ca.crt
+      subPath: ca.crt
+      name: cluster-tls
     - mountPath: /tmp/client-scram.properties
       subPath: client-scram.properties
       name: properties

@@ -1,7 +1,11 @@
 {
   "version": 1,
   "topics": [
-    { "topic": "experiment"},
-    { "topic": "experiment-2"}
+    {
+      "topic": "experiment"
+    },
+    {
+      "topic": "__consumer_offsets"
+    }
   ]
 }

@@ -20,8 +20,12 @@ spec:
   install:
     createNamespace: true
   values:
+    image:
+      repository: registry.localhost:5000/emissaryingress/emissary
     agent:
       enabled: false
+      image:
+        repository: registry.localhost:5000/ambassador/ambassador-agent
     podAnnotations:
       config.linkerd.io/skip-inbound-ports: 80,433
       linkerd.io/inject: enabled

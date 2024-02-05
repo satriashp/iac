@@ -1,0 +1,56 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kafka-producer-generator
+spec:
+  containers:
+    - name: docker
+      image: registry.localhost:5000/docker:latest
+      command:
+        - sleep
+      args:
+        - infinity
+    - name: python
+      image: registry.localhost:5000/python:latest
+      command:
+        - "/bin/sh"
+        - "-c"
+        - "pip install confluent_kafka essential-generators && python /tmp/kafka_producer.py"
+      env:
+        - name: KAFKA_BOOTSTRAP_SERVERS
+          value: "kafka-kafka-bootstrap.kafka-operator:9092"
+        - name: KAFKA_TOPIC
+          value: "experiment"
+        - name: KAFKA_USERNAME
+          value: "accelbyte"
+        - name: KAFKA_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: accelbyte
+              key: password
+        - name: KAFKA_TRUSTSTORE_LOCATION
+          value: '/tmp/ca.p12'
+        - name: KAFKA_TRUSTSTORE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: kafka-cluster-ca-cert
+              key: ca.password
+        - name: KAFKA_CA_LOCATION
+          value: '/tmp/ca.crt'
+      volumeMounts:
+        - mountPath: /tmp/ca.p12
+          subPath: ca.p12
+          name: cluster-tls
+        - mountPath: /tmp/ca.crt
+          subPath: ca.crt
+          name: cluster-tls
+        - mountPath: /tmp/kafka_producer.py
+          subPath: kafka_producer.py
+          name: script
+  volumes:
+  - name: cluster-tls
+    secret:
+      secretName: kafka-cluster-ca-cert
+  - name: script
+    configMap:
+      name: kafka-producer-generator

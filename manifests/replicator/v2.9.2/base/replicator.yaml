@@ -22,6 +22,8 @@ spec:
         namespace: kube-system
       interval: 5m
   values:
+    image:
+      repository: registry.localhost:5000/mittwald/kubernetes-replicator
     args:
       - -resync-period=1m
     podSecurityContext:

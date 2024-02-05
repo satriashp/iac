@@ -6,8 +6,9 @@ data:
     sasl.mechanism=SCRAM-SHA-512
     sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required username="accelbyte" password="kafkauserpassword";
 
-    ssl.truststore.location=/tmp/ca.p12
-    ssl.truststore.password=ssltruststorepassword
+    ssl.ca.location=/tmp/ca.crt
+    # ssl.truststore.location=/tmp/ca.p12
+    # ssl.truststore.password=ssltruststorepassword
 kind: ConfigMap
 metadata:
   name: client-scram-properties

@@ -29,6 +29,20 @@ spec:
     profileValidator:
       externalSecret: true
       injectCaFrom: linkerd/linkerd-sp-validator
+    policyController:
+      image:
+        name: registry.localhost:5000/linkerd/policy-controller
+    proxy:
+      image:
+        name: registry.localhost:5000/linkerd/proxy
+    proxyInit:
+      image:
+        name: registry.localhost:5000/linkerd/proxy-init
+    networkValidator:
+      controllerImage: registry.localhost:5000/linkerd/controller
+    debugContainer:
+      image:
+        name: registry.localhost:5000/linkerd/debug
   valuesFrom:
     - kind: Secret
       name: linkerd-identity-issuer

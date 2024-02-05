@@ -15,3 +15,6 @@ kubectl apply -f $tmp2_yaml
 
 kubectl apply -n $NAMESPACE -f $SCRIPT_DIR/kafka-producer.yaml
 kubectl apply -n $NAMESPACE -f $SCRIPT_DIR/kafka-consumer.yaml
+
+kubectl apply -n $NAMESPACE -f $SCRIPT_DIR/kafka-producer-generator-configmap.yaml
+kubectl apply -n $NAMESPACE -f $SCRIPT_DIR/kafka-producer-generator.yaml

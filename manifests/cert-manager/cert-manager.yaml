@@ -33,3 +33,14 @@ spec:
     crds: Skip
   values:
     installCRDs: true
+    image:
+      repository: registry.localhost:5000/jetstack/cert-manager-controller
+    webhook:
+      image:
+        repository: registry.localhost:5000/jetstack/cert-manager-webhook
+    cainjector:
+      image:
+        repository: registry.localhost:5000/jetstack/cert-manager-cainjector
+    acmesolver:
+      image:
+        repository: registry.localhost:5000/jetstack/cert-manager-acmesolver
