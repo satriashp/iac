@@ -98,3 +98,9 @@ bin/kafka-reassign-partitions.sh \
  --command-config /tmp/client-scram.properties \
  --bootstrap-server kafka-kafka-bootstrap.kafka-operator:9092 \
  --verify
+
+
+
+cat <<< $(jq  '.partitions[].replicas |= [0,1,2]' ~/Works/iac/notes/kafka/reassignment.json ) > ~/Works/iac/notes/kafka/reassignment.json
+
+cat <<< $(jq  '.partitions[].log_dirs |= ["any","any","any"]' ~/Works/iac/notes/kafka/reassignment.json ) > ~/Works/iac/notes/kafka/reassignment.json
