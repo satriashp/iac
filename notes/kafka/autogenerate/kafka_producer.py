@@ -54,7 +54,7 @@ if __name__ == '__main__':
     try:
         while True:
             send_random_message()
-            time.sleep(0.1)  # Wait for 1 second before sending the next message
+            time.sleep(1)  # Wait for 1 second before sending the next message
 
     except KeyboardInterrupt:
         pass

@@ -1,0 +1,105 @@
+###########FLUX#################
+
+docker pull ghcr.io/fluxcd/flux-cli:v2.2.2
+docker pull ghcr.io/fluxcd/helm-controller:v0.37.2
+docker pull ghcr.io/fluxcd/image-automation-controller:v0.37.0
+docker pull ghcr.io/fluxcd/image-reflector-controller:v0.31.1
+docker pull ghcr.io/fluxcd/kustomize-controller:v1.2.1
+docker pull ghcr.io/fluxcd/notification-controller:v1.2.3
+docker pull ghcr.io/fluxcd/source-controller:v1.2.3
+
+docker tag ghcr.io/fluxcd/helm-controller:v0.37.2 localhost:5000/fluxcd/helm-controller:v0.37.2
+docker tag ghcr.io/fluxcd/image-automation-controller:v0.37.0 localhost:5000/fluxcd/image-automation-controller:v0.37.0
+docker tag ghcr.io/fluxcd/image-reflector-controller:v0.31.1 localhost:5000/fluxcd/image-reflector-controller:v0.31.1
+docker tag ghcr.io/fluxcd/kustomize-controller:v1.2.1 localhost:5000/fluxcd/kustomize-controller:v1.2.1
+docker tag ghcr.io/fluxcd/notification-controller:v1.2.3 localhost:5000/fluxcd/notification-controller:v1.2.3
+docker tag ghcr.io/fluxcd/source-controller:v1.2.3 localhost:5000/fluxcd/source-controller:v1.2.3
+
+docker push localhost:5000/fluxcd/helm-controller:v0.37.2
+docker push localhost:5000/fluxcd/image-automation-controller:v0.37.0
+docker push localhost:5000/fluxcd/image-reflector-controller:v0.31.1
+docker push localhost:5000/fluxcd/kustomize-controller:v1.2.1
+docker push localhost:5000/fluxcd/notification-controller:v1.2.3
+docker push localhost:5000/fluxcd/source-controller:v1.2.3
+
+###########FLUX#################
+
+##### REPLICATOR #######
+
+docker pull quay.io/mittwald/kubernetes-replicator:v2.9.2
+docker tag quay.io/mittwald/kubernetes-replicator:v2.9.2 localhost:5000/mittwald/kubernetes-replicator:v2.9.2
+docker push localhost:5000/mittwald/kubernetes-replicator:v2.9.2
+
+##### REPLICATOR #######
+
+
+### cert manager ###
+
+docker pull quay.io/jetstack/cert-manager-controller:v1.12.3
+docker pull quay.io/jetstack/cert-manager-webhook:v1.12.3
+docker pull quay.io/jetstack/cert-manager-cainjector:v1.12.3
+docker pull quay.io/jetstack/cert-manager-acmesolver:v1.12.3
+docker pull quay.io/jetstack/cert-manager-ctl:v1.12.3
+
+docker tag quay.io/jetstack/cert-manager-controller:v1.12.3 localhost:5000/jetstack/cert-manager-controller:v1.12.3
+docker tag quay.io/jetstack/cert-manager-webhook:v1.12.3 localhost:5000/jetstack/cert-manager-webhook:v1.12.3
+docker tag quay.io/jetstack/cert-manager-cainjector:v1.12.3 localhost:5000/jetstack/cert-manager-cainjector:v1.12.3
+docker tag quay.io/jetstack/cert-manager-acmesolver:v1.12.3 localhost:5000/jetstack/cert-manager-acmesolver:v1.12.3
+docker tag quay.io/jetstack/cert-manager-ctl:v1.12.3 localhost:5000/jetstack/cert-manager-ctl:v1.12.3
+
+docker push localhost:5000/jetstack/cert-manager-controller:v1.12.3
+docker push localhost:5000/jetstack/cert-manager-webhook:v1.12.3
+docker push localhost:5000/jetstack/cert-manager-cainjector:v1.12.3
+docker push localhost:5000/jetstack/cert-manager-acmesolver:v1.12.3
+docker push localhost:5000/jetstack/cert-manager-ctl:v1.12.3
+
+### cert manager ###
+
+### Emissary Ingress ###
+
+docker pull docker.io/emissaryingress/emissary:3.7.2
+docker pull docker.io/ambassador/ambassador-agent:1.0.3
+
+docker tag docker.io/emissaryingress/emissary:3.7.2 localhost:5000/emissaryingress/emissary:3.7.2
+docker tag docker.io/ambassador/ambassador-agent:1.0.3 localhost:5000/ambassador/ambassador-agent:1.0.3
+
+docker push localhost:5000/emissaryingress/emissary:3.7.2
+docker push localhost:5000/ambassador/ambassador-agent:1.0.3
+
+### Emissary Ingress ###
+
+### Linkerd ###
+
+docker pull cr.l5d.io/linkerd/policy-controller:stable-2.13.6
+docker pull cr.l5d.io/linkerd/proxy:stable-2.13.6
+docker pull cr.l5d.io/linkerd/proxy-init:v2.2.1
+docker pull cr.l5d.io/linkerd/controller:stable-2.13.6
+docker pull cr.l5d.io/linkerd/debug:stable-2.13.6
+
+docker tag cr.l5d.io/linkerd/policy-controller:stable-2.13.6 localhost:5000/linkerd/policy-controller:stable-2.13.6
+docker tag cr.l5d.io/linkerd/proxy:stable-2.13.6 localhost:5000/linkerd/proxy:stable-2.13.6
+docker tag cr.l5d.io/linkerd/proxy-init:v2.2.1  localhost:5000/linkerd/proxy-init:v2.2.1
+docker tag cr.l5d.io/linkerd/controller:stable-2.13.6 localhost:5000/linkerd/controller:stable-2.13.6
+docker tag cr.l5d.io/linkerd/debug:stable-2.13.6 localhost:5000/linkerd/debug:stable-2.13.6
+
+docker push localhost:5000/linkerd/policy-controller:stable-2.13.6
+docker push localhost:5000/linkerd/proxy:stable-2.13.6
+docker push localhost:5000/linkerd/proxy-init:v2.2.1
+docker push localhost:5000/linkerd/controller:stable-2.13.6
+docker push localhost:5000/linkerd/debug:stable-2.13.6
+
+### Linkerd ###
+
+
+### TOOLS ###
+
+docker pull python:latest
+docker pull docker:latest
+
+docker tag python:latest localhost:5000/python:latest
+docker tag docker:latest localhost:5000/docker:latest
+
+docker push localhost:5000/python:latest
+docker push localhost:5000/docker:latest
+
+### TOOLS ###

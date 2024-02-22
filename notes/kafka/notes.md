@@ -1,7 +1,6 @@
 bin/kafka-topics.sh \
  --topic poc \
  --create \
- --partitions 1 \
  --bootstrap-server kafka-kafka-bootstrap.kafka-operator:9092 \
  --command-config /tmp/client-scram.properties
 

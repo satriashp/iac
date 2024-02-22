@@ -11,7 +11,8 @@ sed "s|kafkauserpassword|${userpassword}|g" $SCRIPT_DIR/configmap.yaml > $tmp_ya
 tmp2_yaml="$(mktemp).yaml"
 sed "s|ssltruststorepassword|${truststorepassword}|g" $tmp_yaml > $tmp2_yaml
 
-kubectl apply -f $tmp2_yaml
+# configmap
+kubectl apply -n $NAMESPACE -f $tmp2_yaml
 
 kubectl apply -n $NAMESPACE -f $SCRIPT_DIR/kafka-producer.yaml
 kubectl apply -n $NAMESPACE -f $SCRIPT_DIR/kafka-consumer.yaml
