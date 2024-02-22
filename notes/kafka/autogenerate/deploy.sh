@@ -14,8 +14,13 @@ sed "s|ssltruststorepassword|${truststorepassword}|g" $tmp_yaml > $tmp2_yaml
 # configmap
 kubectl apply -n $NAMESPACE -f $tmp2_yaml
 
-kubectl apply -n $NAMESPACE -f $SCRIPT_DIR/kafka-producer.yaml
-kubectl apply -n $NAMESPACE -f $SCRIPT_DIR/kafka-consumer.yaml
+# kubectl apply -n $NAMESPACE -f $SCRIPT_DIR/kafka-producer.yaml
+# kubectl apply -n $NAMESPACE -f $SCRIPT_DIR/kafka-consumer.yaml
 
-kubectl apply -n $NAMESPACE -f $SCRIPT_DIR/kafka-producer-generator-configmap.yaml
-kubectl apply -n $NAMESPACE -f $SCRIPT_DIR/kafka-producer-generator.yaml
+kubectl apply -n $NAMESPACE -f $SCRIPT_DIR/kafka-client.yaml
+
+# kubectl apply -n $NAMESPACE -f $SCRIPT_DIR/kafka-producer-generator-configmap.yaml
+# kubectl apply -n $NAMESPACE -f $SCRIPT_DIR/kafka-producer-generator.yaml
+
+kubectl apply -n $NAMESPACE -f $SCRIPT_DIR/kafka-lightweight-configmap.yaml
+kubectl apply -n $NAMESPACE -f $SCRIPT_DIR/kafka-lightweight.yaml

@@ -27,9 +27,19 @@ f. redo step a-d.
 scalling from single broker consider as downtime
 need to increase replication factor for all topic
 
+cant change replication-factor of existing topics
+
 bin/kafka-topics.sh \
  --alter \
  --topic experiment \
+ --partitions 5 \
+ --replication-factor 3 \
+ --bootstrap-server kafka-kafka-bootstrap.kafka-operator:9092 \
+ --command-config /tmp/client-scram.properties
+
+bin/kafka-topics.sh \
+ --alter \
+ --topic __consumer_offsets \
  --partitions 5 \
  --replication-factor 3 \
  --bootstrap-server kafka-kafka-bootstrap.kafka-operator:9092 \

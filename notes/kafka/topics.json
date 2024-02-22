@@ -6,6 +6,15 @@
     },
     {
       "topic": "__consumer_offsets"
+    },
+    {
+      "topic": "strimzi.cruisecontrol.metrics"
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples"
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples"
     }
   ]
 }

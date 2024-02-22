@@ -1,14 +1,14 @@
-apiVersion: kafka.strimzi.io/v1beta2
-kind: KafkaRebalance
-metadata:
-  name: kafka
-  namespace: kafka-operator
-  labels:
-    strimzi.io/cluster: kafka
-spec:
-  mode: add-brokers
-  brokers: [1]
----
+# apiVersion: kafka.strimzi.io/v1beta2
+# kind: KafkaRebalance
+# metadata:
+#   name: kafka
+#   namespace: kafka-operator
+#   labels:
+#     strimzi.io/cluster: kafka
+# spec:
+#   mode: add-brokers
+#   brokers: [1]
+# ---
 apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaRebalance
 metadata:
@@ -16,6 +16,8 @@ metadata:
   namespace: kafka-operator
   labels:
     strimzi.io/cluster: kafka
+  annotations:
+    trimzi.io/rebalance-auto-approval: "true"
 spec:
   mode: add-brokers
   brokers: [1, 2]

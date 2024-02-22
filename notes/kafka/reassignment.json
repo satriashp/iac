@@ -6,7 +6,13 @@
       "partition": 0,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -14,7 +20,13 @@
       "partition": 1,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -22,7 +34,13 @@
       "partition": 2,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -30,7 +48,13 @@
       "partition": 3,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -38,7 +62,13 @@
       "partition": 4,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -46,7 +76,13 @@
       "partition": 5,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -54,7 +90,13 @@
       "partition": 6,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -62,7 +104,13 @@
       "partition": 7,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -70,7 +118,13 @@
       "partition": 8,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -78,7 +132,13 @@
       "partition": 9,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -86,7 +146,13 @@
       "partition": 10,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -94,7 +160,13 @@
       "partition": 11,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -102,7 +174,13 @@
       "partition": 12,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -110,7 +188,13 @@
       "partition": 13,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -118,7 +202,13 @@
       "partition": 14,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -126,7 +216,13 @@
       "partition": 15,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -134,7 +230,13 @@
       "partition": 16,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -142,7 +244,13 @@
       "partition": 17,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -150,7 +258,13 @@
       "partition": 18,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -158,7 +272,13 @@
       "partition": 19,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -166,7 +286,13 @@
       "partition": 20,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -174,7 +300,13 @@
       "partition": 21,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -182,7 +314,13 @@
       "partition": 22,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -190,7 +328,13 @@
       "partition": 23,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -198,7 +342,13 @@
       "partition": 24,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -206,7 +356,13 @@
       "partition": 25,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -214,7 +370,13 @@
       "partition": 26,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -222,7 +384,13 @@
       "partition": 27,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -230,7 +398,13 @@
       "partition": 28,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -238,7 +412,13 @@
       "partition": 29,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -246,7 +426,13 @@
       "partition": 30,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -254,7 +440,13 @@
       "partition": 31,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -262,7 +454,13 @@
       "partition": 32,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -270,7 +468,13 @@
       "partition": 33,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -278,7 +482,13 @@
       "partition": 34,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -286,7 +496,13 @@
       "partition": 35,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -294,7 +510,13 @@
       "partition": 36,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -302,7 +524,13 @@
       "partition": 37,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -310,7 +538,13 @@
       "partition": 38,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -318,7 +552,13 @@
       "partition": 39,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -326,7 +566,13 @@
       "partition": 40,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -334,7 +580,13 @@
       "partition": 41,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -342,7 +594,13 @@
       "partition": 42,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -350,7 +608,13 @@
       "partition": 43,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -358,7 +622,13 @@
       "partition": 44,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -366,7 +636,13 @@
       "partition": 45,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -374,7 +650,13 @@
       "partition": 46,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -382,7 +664,13 @@
       "partition": 47,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -390,7 +678,13 @@
       "partition": 48,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -398,7 +692,13 @@
       "partition": 49,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -406,7 +706,13 @@
       "partition": 0,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -414,7 +720,13 @@
       "partition": 1,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -422,7 +734,13 @@
       "partition": 2,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -430,7 +748,13 @@
       "partition": 3,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     },
     {
@@ -438,7 +762,979 @@
       "partition": 4,
       "replicas": [
         0,
-        1
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.metrics",
+      "partition": 0,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.metrics",
+      "partition": 1,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.metrics",
+      "partition": 2,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.metrics",
+      "partition": 3,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.metrics",
+      "partition": 4,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 0,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 1,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 2,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 3,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 4,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 5,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 6,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 7,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 8,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 9,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 10,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 11,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 12,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 13,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 14,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 15,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 16,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 17,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 18,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 19,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 20,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 21,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 22,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 23,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 24,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 25,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 26,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 27,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 28,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 29,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 30,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.modeltrainingsamples",
+      "partition": 31,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 0,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 1,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 2,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 3,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 4,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 5,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 6,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 7,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 8,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 9,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 10,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 11,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 12,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 13,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 14,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 15,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 16,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 17,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 18,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 19,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 20,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 21,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 22,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 23,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 24,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 25,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 26,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 27,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 28,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 29,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 30,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
+      ]
+    },
+    {
+      "topic": "strimzi.cruisecontrol.partitionmetricsamples",
+      "partition": 31,
+      "replicas": [
+        0,
+        1,
+        2
+      ],
+      "log_dirs": [
+        "any",
+        "any",
+        "any"
       ]
     }
   ]
