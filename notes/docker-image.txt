@@ -93,13 +93,13 @@ docker push localhost:5000/linkerd/debug:stable-2.13.6
 
 ### TOOLS ###
 
-docker pull python:latest
+docker pull python:3.11
 docker pull docker:latest
 
-docker tag python:latest localhost:5000/python:latest
+docker tag python:3.11 localhost:5000/python:3.11
 docker tag docker:latest localhost:5000/docker:latest
 
-docker push localhost:5000/python:latest
+docker push localhost:5000/python:3.11
 docker push localhost:5000/docker:latest
 
 ### TOOLS ###

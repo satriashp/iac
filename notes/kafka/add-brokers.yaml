@@ -17,7 +17,7 @@ metadata:
   labels:
     strimzi.io/cluster: kafka
   annotations:
-    trimzi.io/rebalance-auto-approval: "true"
+    strimzi.io/rebalance-auto-approval: "true"
 spec:
   mode: add-brokers
   brokers: [1, 2]
