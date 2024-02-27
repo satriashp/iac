@@ -8,5 +8,5 @@ dependency "flux2" {
 }
 
 inputs = {
-  cluster = "k3d-local"
+  cluster = "k3d-demo"
 }

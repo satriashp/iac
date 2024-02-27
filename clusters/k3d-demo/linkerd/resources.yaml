@@ -1,0 +1,23 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: linkerd
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: cluster-issuer
+  interval: 10m0s
+  path: ./manifests/linkerd/stable-2.14.10
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  patches:
+    - patch: |
+        - op: replace
+          path: /spec/values/podLabels
+          value: {}
+      target:
+        kind: HelmRelease
+        name: linkerd
+        namespace: flux-system
