@@ -9,7 +9,7 @@ terraform {
 
 provider "helm" {
   kubernetes {
-    config_context = "k3d-local"
+    config_context = var.cluster
     config_path    = "~/.kube/config"
   }
 }

@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "kubectl" {
-  config_context = "k3d-local"
+  config_context = var.cluster
   config_path    = "~/.kube/config"
 }
 
@@ -30,7 +30,7 @@ spec:
 YAML
 }
 
-resource "kubectl_manifest" "sycn" {
+resource "kubectl_manifest" "sync" {
   yaml_body = <<YAML
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
