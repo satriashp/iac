@@ -20,7 +20,7 @@ metadata:
   name: flux-system
   namespace: flux-system
 spec:
-  interval: 1m0s
+  interval: 1h
   ref:
     branch: ${var.branch}
   secretRef:
