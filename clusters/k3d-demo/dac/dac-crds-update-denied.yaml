@@ -7,11 +7,11 @@ spec:
   dependsOn:
     - name: linkerd
   interval: 10m0s
-  path: ./manifests/platform/dac-crds-update-denied
+  path: ./manifests/dac-crds-update-denied
   prune: false
   sourceRef:
     kind: GitRepository
-    name: iac-repo
+    name: flux-system
   validation: client
   postBuild:
     substituteFrom:
