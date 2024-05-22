@@ -4,8 +4,6 @@ metadata:
   name: dac-crds-update-denied
   namespace: flux-system
 spec:
-  dependsOn:
-    - name: linkerd
   interval: 10m0s
   path: ./manifests/dac-crds-update-denied
   prune: false
