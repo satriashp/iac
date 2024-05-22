@@ -24,7 +24,7 @@ spec:
           imagePullPolicy: Always
           env:
             - name: ALLOWED
-              value: "${ALLOWED:=false}"
+              value: ${quote}${ALLOWED:=false}${quote}
           ports:
             - containerPort: 443
               name: https
