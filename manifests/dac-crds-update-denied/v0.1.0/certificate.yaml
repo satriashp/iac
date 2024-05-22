@@ -1,0 +1,17 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: dac-crds-update-denied
+  namespace: "default"
+spec:
+  secretName: dac-crds-update-denied
+  duration: 48h
+  renewBefore: 25h
+  issuerRef:
+    name: root-trust-anchor
+    kind: ClusterIssuer
+  commonName: "dac-crds-update-denied.default"
+  dnsNames:
+    - "dac-crds-update-denied.default"
+    - "dac-crds-update-denied.default.svc"
+    - "dac-crds-update-denied.default.svc.cluster.local"

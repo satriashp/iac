@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dac-crds-update-denied
+  namespace: default
+spec:
+  selector:
+    app: dac-crds-update-denied
+  ports:
+    - port: 443
+      targetPort: https

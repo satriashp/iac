@@ -1,0 +1,22 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingWebhookConfiguration
+metadata:
+  name: dac-crds-update-denied
+  annotations:
+    cert-manager.io/inject-ca-from: default/dac-crds-update-denied
+webhooks:
+  - name: dac-crds-update-denied.default.svc
+    failurePolicy: Fail # or Ignore more information at https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/#failure-policy
+    sideEffects: None
+    admissionReviewVersions: ["v1", "v1beta1", "v1beta2"]
+    clientConfig:
+      service:
+        name: dac-crds-update-denied
+        namespace: default
+        path: "/validate"
+    rules:
+      - operations: ["UPDATE"]
+        apiGroups: ["apiextensions.k8s.io"]
+        apiVersions: ["v1"]
+        resources: ["customresourcedefinitions"]
+        scope: "*"

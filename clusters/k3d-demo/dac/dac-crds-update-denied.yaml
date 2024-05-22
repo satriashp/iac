@@ -1,0 +1,21 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: dac-crds-update-denied
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: linkerd
+  interval: 10m0s
+  path: ./manifests/platform/dac-crds-update-denied
+  prune: false
+  sourceRef:
+    kind: GitRepository
+    name: iac-repo
+  validation: client
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: cluster-variables
+    substitute:
+      ALLOWED: "true"
